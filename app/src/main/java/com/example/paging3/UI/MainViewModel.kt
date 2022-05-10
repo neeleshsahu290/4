@@ -17,9 +17,11 @@ import javax.inject.Inject
 class MainViewModel
 @Inject constructor(private val apiService: ApiService) : ViewModel()
 {
-    val getAllDogs:Flow<PagingData<Dogs>> = Pager(config = PagingConfig(20,enablePlaceholders = false)){
+    val getAllDogs:Flow<PagingData<Dogs>> by lazy {
+        Pager(config = PagingConfig(20,enablePlaceholders = false)){
         DogsPageSource(apiService)
     }.flow.cachedIn(viewModelScope)
+    }
 
 
 }

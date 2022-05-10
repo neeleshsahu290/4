@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         binding.apply {
             recyclerview.apply {
                 setHasFixedSize(true)
-                layoutManager = GridLayoutManager(this@MainActivity,2)
+                layoutManager = GridLayoutManager(this@MainActivity,3)
                 adapter = dogsAdapter.withLoadStateHeaderAndFooter(
                     header = LoaderStateAdapter { dogsAdapter :: retry},
                     footer = LoaderStateAdapter{dogsAdapter :: retry}

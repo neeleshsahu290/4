@@ -7,7 +7,8 @@ import com.example.paging3.Data.Network.ApiService
 import retrofit2.HttpException
 import java.io.IOException
 
-class DogsPageSource
+class
+DogsPageSource
 constructor(private val apiService: ApiService) : PagingSource<Int,Dogs>() {
 
     private val DEFAULT_PAGE_INDEX= 1
